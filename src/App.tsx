@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <Number value={10}/>
+                <String value={"10"}/>
+                <Person first={"John"} last={"Mayor"} age={39}/>
+            </header>
+        </div>
+    );
 }
+
+type NumberProps = { value: number }
+const Number = (props: NumberProps) => <div>The number is {props.value}</div>
+
+type StringProps = { value: string }
+const String = (props: StringProps) => <div>The string is {props.value}</div>
+
+type PersonProps = {first: string, last: string, age: number}
+const Person = (props: PersonProps) => <div>Hello {props.first} {props.last}, you are {props.age} years old!</div>
+
 
 export default App;
