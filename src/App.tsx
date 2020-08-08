@@ -6,6 +6,7 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <Number value={10}/>
+                <NumberPropsAsFC numberProps={{value: 10}}/>
                 <String value={"10"}/>
                 <Person first={"John"} last={"Mayor"} age={39}/>
             </header>
@@ -15,6 +16,7 @@ function App() {
 
 type NumberProps = { value: number }
 const Number = (props: NumberProps) => <div>The number is {props.value}</div>
+const NumberPropsAsFC: React.FunctionComponent<{ numberProps: NumberProps }> = ({numberProps}) => <div>The number as Functional Component is {numberProps.value}</div>
 
 type StringProps = { value: string }
 const String = (props: StringProps) => <div>The string is {props.value}</div>
